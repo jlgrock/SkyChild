@@ -9,7 +9,10 @@ In this example, the plugin gets bundled using [Gradle](http://www.gradle.org/ "
 This guarantees that everything is up to date and that packaging is 
 consistent.  Gradle is the best build tool that I've come across thus far
 and I hope and suggest that everyone look into it, as it is the future for 
-JVM languages, if not others.
+JVM languages, if not others.  Please note that I have also checked in the
+"Gradle Wrapper", which allows you to execute the gradle build without needing
+to install Gradle (though the JVM is required).  To do this, just go to the root
+of the project and execute the command "gradle".
 
 Theme development is described by reading the article at http://codex.wordpress.org/Theme_Development.
 
