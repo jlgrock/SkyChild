@@ -1,0 +1,25 @@
+defaultTasks 'clean', 'packageThemeExtension'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
+}
+
+//Removes everything from the projects "build" directory
+//http://www.gradle.org/docs/current/dsl/org.gradle.api.tasks.Delete.html
+task clean(type: Delete) {
+    description='Clean up all artifacts created in the '
+    group='Clean'
+    delete project.buildDir
+}
+
+//Zips up the files and places them in the projects buildDir
+//http://www.gradle.org/docs/current/dsl/org.gradle.api.tasks.bundling.Zip.html
+task packageThemeExtension(type: Zip) {
+    description = 'Will zip up all of the objects in src/main and place it into the build directory'
+    group='Package'
+    baseName = 'SkyChild'
+    from('src/main')
+    includeEmptyDirs = true
+    destinationDir=project.buildDir
+}
+
